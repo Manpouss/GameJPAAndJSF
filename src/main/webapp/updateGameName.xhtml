@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f ="http://java.sun.com/jsf/core">
+	<h:head>
+		<title>Modifier un jeu</title>
+	</h:head>
+	<h:body>
+		<center><h2><h:outputText value="Modifier un jeu"/></h2></center>
+     <h:form id="updateGameForm" styleClass="form-horizontal">                        
+         <div class="form-group">
+             <h:outputLabel for="idLabel" >Id</h:outputLabel>
+             <h:outputText value="${editGame.id}"/>
+         </div>
+         <div class="form-group">
+             <h:outputLabel for="nameLabel" styleClass="control-label col-sm-2">Nom</h:outputLabel>
+             <div class="col-sm-4"><h:inputText id="name" value="${editGame.name}" /></div>
+         </div>
+         <div class="form-group">
+             <div class="col-sm-2" />
+             <div class="col-sm-4">
+                 <h:commandButton value="Modifier" action="#{gameMB.updateGame(editGame)}" />
+             </div>
+         </div>
+     </h:form>
+	</h:body>
+</html>
